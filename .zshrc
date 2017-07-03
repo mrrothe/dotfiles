@@ -35,6 +35,8 @@ alias tree='du -sh ./* | sort -hr'
 alias space='df -h'
 alias cp="rsync --progress -ravz"
 
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
 if $WINDOWS; then
 	chromepath="/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe"
 else
