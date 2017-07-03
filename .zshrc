@@ -1,8 +1,14 @@
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/martin/.oh-my-zsh
+
+WINDOWS=false
+if  [[ -a /mnt/c/Windows ]]; then
+    WINDOWS=true
+fi
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -86,13 +92,18 @@ source $ZSH/oh-my-zsh.sh
 
 alias lss='ls -Glash'
 alias snano='sudo nano'
+if $WINDOWS; then
+	chromepath="/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe"
+else
+	chromepath="/opt/google/chrome/chrome"
+fi
 
 function b64() {
 	echo -n "$*" | base64 --decode
 }
 
 google() {
-    /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe "http://google.com/search?q=$@"
+   eval "${chromepath} \"http://google.com/search?q=$@\""
 }
 
 
