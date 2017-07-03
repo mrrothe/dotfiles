@@ -1,4 +1,4 @@
-export ZSH=/home/martin/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 # Determine current OS
 WINDOWS=false
 if  [[ -a /mnt/c/Windows ]]; then
